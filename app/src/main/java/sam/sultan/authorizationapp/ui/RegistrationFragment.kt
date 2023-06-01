@@ -28,6 +28,9 @@ class RegistrationFragment : Fragment() {
         binding.backButton.setOnClickListener {
             findNavController().navigateUp()
         }
+        binding.nextButton.setOnClickListener {
+            findNavController().navigate(R.id.action_registrationFragment_to_detailInfoFragment)
+        }
     }
 
 }

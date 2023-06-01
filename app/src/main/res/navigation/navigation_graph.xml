@@ -13,10 +13,36 @@
         <action
             android:id="@+id/action_welcomeFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="sam.sultan.authorizationapp.ui.RegistrationFragment"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" />
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_detailInfoFragment"
+            app:destination="@id/detailInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailInfoFragment"
+        android:name="sam.sultan.authorizationapp.ui.DetailInfoFragment"
+        android:label="fragment_detail_info"
+        tools:layout="@layout/fragment_detail_info" >
+        <action
+            android:id="@+id/action_detailInfoFragment_to_generatingPasswordFragment"
+            app:destination="@id/generatingPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="sam.sultan.authorizationapp.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/generatingPasswordFragment"
+        android:name="sam.sultan.authorizationapp.ui.GeneratingPasswordFragment"
+        android:label="fragment_generating_password"
+        tools:layout="@layout/fragment_generating_password" />
 </navigation>

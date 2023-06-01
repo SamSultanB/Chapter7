@@ -80,7 +80,7 @@
             android:singleLine="true"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/empty_field"
-            android:hint="Электронная почта" />
+            android:hint="@string/email" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,7 +94,7 @@
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/smile_text_color"
         android:text="Далее"
-        android:enabled="false"
+        android:enabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
