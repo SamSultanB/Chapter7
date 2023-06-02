@@ -14,4 +14,6 @@
     <string name="createPassword">Создать пароль</string>
     <string name="enterPassword">Придумайте пароль</string>
     <string name="reenterPassword">Повторите пароль</string>
+    <string name="next">Далее</string>
+    <string name="resetPassword">Сброс пароля</string>
 </resources>

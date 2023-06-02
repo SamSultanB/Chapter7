@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.RegistrationFragment">
+    tools:context=".ui.ResetFragment">
 
     <TextView
         android:id="@+id/textView2"
@@ -14,7 +14,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="100dp"
-        android:text="Регистрация"
+        android:text="@string/resetPassword"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
