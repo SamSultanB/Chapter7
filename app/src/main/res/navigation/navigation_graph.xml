@@ -39,10 +39,28 @@
         android:id="@+id/loginFragment"
         android:name="sam.sultan.authorizationapp.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_resetFragment"
+            app:destination="@id/resetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/generatingPasswordFragment"
         android:name="sam.sultan.authorizationapp.ui.GeneratingPasswordFragment"
         android:label="fragment_generating_password"
         tools:layout="@layout/fragment_generating_password" />
+    <fragment
+        android:id="@+id/resetFragment"
+        android:name="sam.sultan.authorizationapp.ui.ResetFragment"
+        android:label="fragment_reset"
+        tools:layout="@layout/fragment_reset" >
+        <action
+            android:id="@+id/action_resetFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="sam.sultan.authorizationapp.ui.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
 </navigation>
