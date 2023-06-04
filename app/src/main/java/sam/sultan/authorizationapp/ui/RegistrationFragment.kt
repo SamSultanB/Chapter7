@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import sam.sultan.authorizationapp.R
 import sam.sultan.authorizationapp.databinding.FragmentRegistrationBinding
+import sam.sultan.authorizationapp.view_models.ViewModel
 
 class RegistrationFragment : Fragment() {
 
     lateinit var binding: FragmentRegistrationBinding
+    val viewModel = ViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +31,16 @@ class RegistrationFragment : Fragment() {
             findNavController().navigateUp()
         }
         binding.nextButton.setOnClickListener {
-            findNavController().navigate(R.id.action_registrationFragment_to_detailInfoFragment)
+            var email = binding.emailField.text.toString()
+            if(viewModel.validEmail(email) == null){
+                findNavController().navigate(R.id.action_registrationFragment_to_detailInfoFragment)
+            }else{
+                binding.emailContainer.helperText = viewModel.validEmail(email)
+            }
         }
+
     }
+
+
 
 }
