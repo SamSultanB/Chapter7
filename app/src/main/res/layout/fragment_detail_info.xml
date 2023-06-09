@@ -14,6 +14,8 @@
         android:layout_marginTop="44dp"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
+        app:helperText=""
+        app:helperTextTextColor="@color/invalid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,6 +28,7 @@
             android:backgroundTint="@color/empty_field"
             android:imeOptions="actionNext"
             android:nextFocusForward="@id/surname"
+            android:inputType="text"
             android:hint="@string/name"
             android:singleLine="true" />
 
@@ -39,6 +42,8 @@
         android:layout_marginHorizontal="20dp"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
+        app:helperText=""
+        app:helperTextTextColor="@color/invalid"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name">
@@ -51,6 +56,7 @@
             android:backgroundTint="@color/empty_field"
             android:imeOptions="actionNext"
             android:nextFocusForward="@id/birthday"
+            android:inputType="text"
             android:hint="@string/surname"
             android:singleLine="true"/>
 
@@ -64,6 +70,8 @@
         android:layout_marginHorizontal="20dp"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
+        app:helperText=""
+        app:helperTextTextColor="@color/invalid"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/surname">
@@ -76,33 +84,35 @@
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/empty_field"
             android:imeOptions="actionNext"
-            android:nextFocusForward="@id/phone"
+            android:nextFocusForward="@id/emailDetails"
             android:hint="@string/birthday"
             android:singleLine="true"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phone"
+        android:id="@+id/emailDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="20dp"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
+        app:helperText=""
+        app:helperTextTextColor="@color/invalid"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/birthday">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phoneField"
+            android:id="@+id/emailField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
+            android:inputType="textEmailAddress"
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/empty_field"
             android:imeOptions="actionDone"
-            android:hint="@string/phone"
+            android:hint="@string/email"
             android:singleLine="true"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +127,7 @@
         android:enabled="true"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/smile_text_color"
-        app:layout_constraintTop_toBottomOf="@id/phone"
+        app:layout_constraintTop_toBottomOf="@id/emailDetails"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

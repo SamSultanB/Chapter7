@@ -16,4 +16,5 @@
     <string name="reenterPassword">Повторите пароль</string>
     <string name="next">Далее</string>
     <string name="resetPassword">Сброс пароля</string>
+    <string name="message">На вашу почту «%s» было отправлено письмо</string>
 </resources>
