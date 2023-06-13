@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import sam.sultan.authorizationapp.R
 import sam.sultan.authorizationapp.databinding.FragmentResetBinding
+import sam.sultan.authorizationapp.entities.Email
+import sam.sultan.authorizationapp.view_models.ViewModel
 
 class ResetFragment : Fragment() {
 
     lateinit var binding: FragmentResetBinding
+    val viewModel = ViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +28,8 @@ class ResetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.nextButton.setOnClickListener {
+            val email = Email(binding.emailField.text.toString())
+            viewModel.forgotPassword(email)
             findNavController().navigate(R.id.action_resetFragment_to_resetPasswordFragment)
         }
 

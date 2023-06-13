@@ -1,5 +1,5 @@
 package sam.sultan.authorizationapp.utils
 
-object Constrants {
+object Constants {
     const val BASE_URL = "http://34.159.136.79"
 }

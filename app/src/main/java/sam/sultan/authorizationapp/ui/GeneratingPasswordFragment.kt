@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import sam.sultan.authorizationapp.R
 import sam.sultan.authorizationapp.databinding.FragmentGeneratingPasswordBinding
+import sam.sultan.authorizationapp.entities.Password
 import sam.sultan.authorizationapp.view_models.ViewModel
 
 class GeneratingPasswordFragment : Fragment() {
@@ -45,5 +46,16 @@ class GeneratingPasswordFragment : Fragment() {
                 }
             }
         }
+        binding.buttonCreatePassword.setOnClickListener {
+            passwordSave()
+        }
+    }
+
+    private fun passwordSave(){
+        val pass1 = binding.firstPassword.text.toString()
+        val pass2 = binding.secondPassword.text.toString()
+        val passwords = Password(pass1, pass2)
+        viewModel.setPassword(passwords)
+        findNavController().navigate(R.id.action_generatingPasswordFragment_to_loginFragment)
     }
 }
