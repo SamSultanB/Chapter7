@@ -3,22 +3,26 @@ package sam.sultan.authorizationapp.api
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
-import sam.sultan.authorizationapp.entities.Email
-import sam.sultan.authorizationapp.entities.LoginData
-import sam.sultan.authorizationapp.entities.UserDetails
+import retrofit2.http.PUT
+import retrofit2.http.Path
+import retrofit2.http.Query
+import sam.sultan.authorizationapp.entities.*
 
 interface Api {
 
     @POST("register/")
-    suspend fun register(@Body email: Email): Response<Email>
+    suspend fun register(@Body email: Email): Response<RegistrationResponse>
 
     @POST("login/")
-    suspend fun login(loginData: LoginData): Response<LoginData>
+    suspend fun login(@Body loginData: LoginData): Response<LoginData>
 
     @POST("{user_id}/form/")
-    suspend fun infoForm(userDetails: UserDetails): Response<UserDetails>
+    suspend fun infoForm(@Body userDetails: UserDetails, @Path("user_id") id: String): Response<UserDetails>
 
     @POST("forgot_password/")
-    suspend fun password(@Body email: Email): Response<Email>
+    suspend fun password(@Body email: Email): Response<RegistrationResponse>
+
+    @PUT("{user_id}/set_password/")
+    suspend fun setPassword(@Body password: Password): Response<Password>
 
 }

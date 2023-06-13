@@ -48,7 +48,11 @@
         android:id="@+id/generatingPasswordFragment"
         android:name="sam.sultan.authorizationapp.ui.GeneratingPasswordFragment"
         android:label="fragment_generating_password"
-        tools:layout="@layout/fragment_generating_password" />
+        tools:layout="@layout/fragment_generating_password" >
+        <action
+            android:id="@+id/action_generatingPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/resetFragment"
         android:name="sam.sultan.authorizationapp.ui.ResetFragment"

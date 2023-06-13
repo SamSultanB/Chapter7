@@ -4,16 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import retrofit2.Response
-import sam.sultan.authorizationapp.entities.Email
-import sam.sultan.authorizationapp.entities.Resource
+import sam.sultan.authorizationapp.entities.*
 import sam.sultan.authorizationapp.repositories.Repository
 
 class ViewModel: ViewModel() {
 
     private val repository = Repository()
 
-    val response = MutableLiveData<Resource<Email>>()
+    val response = MutableLiveData<Resource<RegistrationResponse>>()
 
     fun register(email: Email){
         viewModelScope.launch {
@@ -24,6 +22,24 @@ class ViewModel: ViewModel() {
             }else{
                 response.postValue(Resource.Error(result.message()))
             }
+        }
+    }
+
+    fun saveDetails(userDetails: UserDetails, id: String){
+        viewModelScope.launch {
+            repository.saveDetails(userDetails, id)
+        }
+    }
+
+    fun setPassword(password: Password){
+        viewModelScope.launch {
+            repository.setPassword(password)
+        }
+    }
+
+    fun login(loginData: LoginData){
+        viewModelScope.launch {
+            repository.login(loginData)
         }
     }
 
@@ -38,6 +54,8 @@ class ViewModel: ViewModel() {
             }
         }
     }
+
+
 
     //validation methods
 

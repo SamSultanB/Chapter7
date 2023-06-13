@@ -2,7 +2,7 @@ package sam.sultan.authorizationapp.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import sam.sultan.authorizationapp.utils.Constrants.BASE_URL
+import sam.sultan.authorizationapp.utils.Constants.BASE_URL
 
 class RetrofitInstance {
 

@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import sam.sultan.authorizationapp.R
 import sam.sultan.authorizationapp.databinding.FragmentResetPasswordBinding
+import sam.sultan.authorizationapp.entities.Password
+import sam.sultan.authorizationapp.view_models.ViewModel
 
 class ResetPasswordFragment : Fragment() {
 
     lateinit var binding: FragmentResetPasswordBinding
+    val viewModel = ViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +26,12 @@ class ResetPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.buttonCreatePassword.setOnClickListener {
+            val pass1 = binding.pass1.text.toString()
+            val pass2 = binding.pass2.text.toString()
+            val password = Password(pass1, pass2)
+            viewModel.setPassword(password)
+        }
     }
 
 }

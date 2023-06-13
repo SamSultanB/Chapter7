@@ -17,4 +17,5 @@
     <string name="next">Далее</string>
     <string name="resetPassword">Сброс пароля</string>
     <string name="message">На вашу почту «%s» было отправлено письмо</string>
+    <string name="wrong_login">Неверный логин или пароль</string>
 </resources>
